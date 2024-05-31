@@ -9,7 +9,7 @@ int main (void) {
     do {
         printf("\n****\t1001 AUTOS\t****\n");
         opcion = opcionmenu();
-        procesar(opcion); //switchs del menu
+        procesar(opcion); 
     } while (opcion != 0);
     return 0;   
 }

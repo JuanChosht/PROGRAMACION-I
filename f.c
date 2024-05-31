@@ -11,8 +11,8 @@ int opcionmenu(void){
     printf("Seleccione una opcion:\n");
     printf("1. Ingresar auto\n");
     printf("2. Editar auto\n");
-    printf("3. Eliminar auto\n");
-    printf("4. Buscar autos\n");
+    printf("3. Buscar autos\n");
+    printf("4. Mostrar autos\n");
     printf("0. Salir\n");
     printf("Opcion: ");
     scanf("%i", &opcion);
@@ -28,10 +28,10 @@ void procesar(int opcion){
             editar(CantProductos);
             break;
         case 3:
-            //eliminar producto
+            buscar(CantProductos);
             break;
         case 4:
-            buscar(CantProductos);
+            mostrar(CantProductos);
             break;
         case 0:
             break;
@@ -118,7 +118,7 @@ void buscar(int cantidadproductos){
         else{
             for(int i = 0; i < CantProductos; i++){
                 if(strcmp(input, productos[i].tipo) == 0 || strcmp(input, productos[i].modelo) == 0){
-                    printf("Auto %i", i+1);
+                    printf("Auto %i\n", i+1);
                     printf("Tipo: %s\n", productos[i].tipo);
                     printf("Modelo: %s\n", productos[i].modelo);
                     printf("Año: %d\n", productos[i].year);
@@ -130,7 +130,7 @@ void buscar(int cantidadproductos){
     
 }
 
-//agregar
+
 void procesarbuscar(int opcion){
         switch (opcion)
         {
@@ -194,10 +194,10 @@ void year(void){
 void mostrar(int cantidadproductos){
     if(cantidadproductos > 0){
         for(int i = 0; i < cantidadproductos; i++){
-            printf("--Producto %i--\n", i+1);
+            printf("--Auto %i--\n", i+1);
             printf("Marca: %s\n", productos[i].marca);
-            printf("Modelo: %i\n", productos[i].modelo);
-            printf("Tipo: %i\n", productos[i].tipo);
+            printf("Modelo: %s\n", productos[i].modelo);
+            printf("Tipo: %s\n", productos[i].tipo);
             printf("Año: %i\n", productos[i].year);
             printf("Precio: $%.2f\n", productos[i].precio);
         }
@@ -206,6 +206,7 @@ void mostrar(int cantidadproductos){
         printf("No existen productos para mostrar.\n");
     }
 }
+
 
 
     
