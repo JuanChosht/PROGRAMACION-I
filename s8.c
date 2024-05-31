@@ -1,11 +1,13 @@
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 #include "f.h"
 
 
 int main (void) {
     int opcion;
     do {
-        printf("\n****\tTIENDA\t****\n");
+        printf("\n****\t1001 AUTOS\t****\n");
         opcion = opcionmenu();
         procesar(opcion); //switchs del menu
     } while (opcion != 0);
